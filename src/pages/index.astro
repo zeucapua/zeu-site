@@ -1,16 +1,23 @@
 ---
-
+import SiteLayout from "../components/SiteLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<SiteLayout title="zeu.dev">
+  <main class="flex flex-col gap-4 px-4 py-8 text-white text-lg">
+    <h1 class="text-5xl font-bold text-yellow-500">hey hi hello!</h1>
+    <h2>welcome to my site!</h2>
+
+    <p>
+      I have plenty of ideas and projects I want to talk to you guys about
+      and so I made this site to showcase all I've been doing.
+    </p>
+
+    <p>
+      updates and showcases will be hosted here, alongside my own thoughts
+      with papers and micro-blogs.
+    </p>
+  
+
+    <p class="text-yellow-500">- @zeu_dev</p>
+  </main>
+</SiteLayout>
