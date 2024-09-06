@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "../../components/BlogCard.astro";
+import SiteLayout from "../../components/SiteLayout.astro";
+
+const blogs = await getCollection("blog", ({ data }) => {
+  return data.draft === false;
+});
+---
+
+<SiteLayout title="Blogs | zeu.dev">
+  <main class="flex flex-col gap-8 py-8 max-w-3xl">
+    <h1 class="text-5xl text-white font-bold">Blog Posts</h1>
+
+    { blogs.map((blog) => <BlogCard {blog} />) }
+  </main>
+</SiteLayout>

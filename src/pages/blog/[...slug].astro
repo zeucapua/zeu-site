@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import SiteLayout from "../../components/SiteLayout.astro";
+
+export interface Props {
+  blog : CollectionEntry<'blog'>
+}
+
+export const getStaticPaths = (async () => {
+  const blogs = await getCollection("blog");
+  return blogs.map((blog) => {
+    return { 
+      params: { slug: blog.slug },
+      props: { blog }
+    }});
+}) satisfies GetStaticPaths;
+
+const { blog }  = Astro.props;
+
+const { Content } = await blog.render();
+---
+
+<SiteLayout>
+  <main class="flex flex-col gap-4 w-full py-8">
+    <article class="prose prose-invert w-full max-w-6xl prose-code:text-purple-400"> 
+      <h1 class="text-yellow-500">{blog.data.title}</h1>
+      <p class="text-yellow-500">{blog.data.description}</p>
+      <time>Latest: {new Date(blog.data.date).toLocaleDateString()}</time>
+
+      <Content />
+    </article>
+  </main>
+  
+</SiteLayout>

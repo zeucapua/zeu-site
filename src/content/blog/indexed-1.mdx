@@ -1,0 +1,92 @@
+---
+title: "This is HTML: Indexed - Web Development Explained"
+description: An overview on what HTML is and how to use them while making websites. Part 1 of the Indexed - Web Development Explained series. 
+date: 01-06-2024
+draft: false
+---
+import CodePreview from "../../components/CodePreview.astro";
+
+## Elements, Tags, and the Properties Within
+
+HTML is the programming language used to layout the content inside a webpage. Writing in HTML involves using
+elements, also known as tags (throughout the series, I will be using these interchangeably), and putting them in 
+order for your design.
+
+Most tags are used in twos, both with angle brackets with the type inside, with the ending tag's type starting 
+with a slash. Between the two is where we'd put content, which can also include more elements. Some elements, 
+like `<img />`, are what's called "self-closing tags", denoted with the slash at the end.
+
+<CodePreview>
+  <div slot="preview">
+      <h2>An error has occurred??</h2>
+      <img src="https://media.giphy.com/media/ltx2rcXk8sE4OCHnFB/giphy.gif" />
+  </div>
+  <div slot="code">
+    ```html
+    <div>
+        <h2>An error has occurred??</h2>
+        <img src="https://media.giphy.com/media/ltx2rcXk8sE4OCHnFB/giphy.gif" />
+    </div>
+    ```
+  </div>
+</CodePreview>
+
+ We can
+configure tags like these with its properties, or "props" for short. For example, to have this image tag to show a 
+picture, we'll set its `src` property a link, as well as state an alternate text to make it accessible to those
+hard of seeing.
+
+## So Common You Should Memorize Them 
+
+Mozilla Developer Network (MDN), a definitive web development resource online, has a list of all HTML tags. All in
+all, there are 142 elements, 115 of which are functional today with the rest being deprecated. Now you 
+aren't expected to learn every single tag, but when you make enough websites there will be elements that 
+comes up often. 
+
+Here's my list of tags I use everyday:
+
+- `<div>`, `<section>`, `<main>`: containers to label off parts of the page. I use `<main>` for the page's
+content, `<section>` when there's a defined part (like the code preview above), and `<div>` when I need 
+to group elements, but don't need to label them, usually for layout and styling reasons.
+- `<h1>`->`<h6>`, `<p>`: headers and paragraph text elements. These come with default styles, 
+but since I use TailwindCSS, they all look the same. No matter how they look, they do help me 
+distinguish between a wall of text and something to highlight.
+- `<img>`: images (and gifs)! Make sure to use the `alt` prop to describe the image to those who might
+need to use screen users. Accessibility is great!
+- `<input>`, `<button>`: interactive elements, connect these with a `<form>` or script function to
+allow people to use your websites.
+- `<a>`: the link tag. Go to another page (either on the same website or another on the internet) by
+adding the link as its `href` prop.
+
+There are plenty more that I'm missing as I rattle these off at the top of my head. I memorize these since
+I use these everyday no matter the kind of website I'm creating, but if there's anything I need that I
+don't remember (for example `<video>` or `<track>`), MDN and Google are always there for me.
+
+
+## Just the beginning
+
+HTML can only get you so far. Over the years, a lot of functionality has been baked into these elements.
+A recent example can be seen with the `<dialog>` tag that makes modals native to the browser, a feature
+that's been in use for decades before and practically only available in Javascript packages and frameworks.
+
+With that in mind, dialogs and buttons can't work without some scripting, so in the next part of the 
+Indexed series, we'll start to take a look at the basics of Javascript ("JS") and how to use them 
+with HTML. First up is using vanilla JS, before moving onto JS UI frameworks that are popular today,
+like React and Svelte.
+
+## Thanks for reading
+
+Indexed is a series to write down all I've learned about web development. Think of this as my notebook
+scribbled with tips and lessons about how I think about websites. We'll see if I can make one of these
+blogs every week.
+
+That’s in the future though! For now, I’d like to thank you for reading this blog.
+I very much appreciate it, and if you can do me a favor, take a look at the links down below.
+Catch you in the next one!
+
+## Shameless Plugs
+
+- If you'd like to look at any of my code, they are all open sourced on my Github [here](https://github.com/zeucapua).
+- Most of my projects are made live on my Twitch stream! Code new projects with me weekly on [twitch.tv/zeu_dev](https://twitch.tv/zeu_dev).
+- Any comments or questions can reach me on Twitter. Follow me at [twitter.com/zeu_dev](https://twitter.com/zeu_dev).
+- Interested on other stuff? Visit my personal website at [zeu.dev](https://zeu.dev) and my other blogs here on [thoughts.zeu.dev](https://thoughts.zeu.dev).
