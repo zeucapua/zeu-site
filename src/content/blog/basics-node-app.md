@@ -267,7 +267,7 @@ pnpm run migrate
 // index.tsx
 // ---------------------------------------
 
-/* 🪂 Import pacakages (installed via npm/pnpm) */
+/* 🪂 Import packages (installed via npm/pnpm) */
 // ...
 
 // Database Driver
