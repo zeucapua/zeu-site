@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import BlogCard from "../../components/BlogCard.astro";
 import SiteLayout from "../../components/SiteLayout.astro";
+import type { CollectionEntry } from "astro:content";
 
-const blogs = await getCollection("blog", ({ data }) => {
-  return data.draft === false;
+const blogs = await getCollection("blog", (blog: CollectionEntry<"blog">) => {
+  return blog.data.draft === false;
 });
 ---
 
@@ -12,6 +13,8 @@ const blogs = await getCollection("blog", ({ data }) => {
   <main class="flex flex-col gap-8 py-8 max-w-3xl">
     <h1 class="text-5xl text-white font-bold">Blog Posts</h1>
 
-    { blogs.map((blog) => <BlogCard {blog} />) }
+    { // @ts-ignore
+    blogs.map((blog: any) => <BlogCard {blog} />) 
+    }
   </main>
 </SiteLayout>
