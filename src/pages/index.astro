@@ -3,7 +3,7 @@ import SiteLayout from "../components/SiteLayout.astro";
 ---
 
 <SiteLayout title="zeu.dev">
-  <main class="flex flex-col gap-4 px-4 py-8 text-white text-lg">
+  <main class="flex flex-col gap-8 px-4 py-8 text-white text-lg">
     <pre aria-label="zeu in ASCII NV Script" class="text-yellow-500">
                                 
                                 
@@ -21,20 +21,33 @@ import SiteLayout from "../components/SiteLayout.astro";
 
 
     </pre>
-    <h1 class="text-5xl font-bold text-yellow-500">hey hi hello!</h1>
-    <h2 class="text-yellow-500 font-medium text-2xl">welcome to my site!</h2>
+    <div class="flex flex-col gap-4">
+      <h1 class="text-5xl font-bold text-yellow-500">hey hi hello!</h1>
+      <h2 class="text-yellow-500 font-medium text-2xl">welcome to my site!</h2>
 
-    <p>
-      I have plenty of ideas and projects I want to talk to you guys about
-      and so I made this site to showcase all I've been doing.
-    </p>
+      <p>
+        I have plenty of ideas and projects I want to talk to you guys about
+        and so I made this site to showcase all I've been doing.
+      </p>
 
-    <p>
-      updates and showcases will be hosted here, alongside my own thoughts
-      with papers and micro-blogs.
-    </p>
-  
+      <p>
+        updates and showcases will be hosted here, alongside my own thoughts.
+      </p>
+    
 
-    <p class="text-yellow-500">- @zeu_dev</p>
+      <p class="text-yellow-500">- @zeu_dev</p>
+    </div>
+
+    <section class="flex flex-col lg:flex-row gap-8 my-8">
+      <a href="/open-source" class="border-2 rounded-lg w-fit p-4">
+        <h3 class="text-xl text-yellow-500 font-bold">Open Source</h3>
+        <p>Explorations, packages, and sites</p>
+      </a>
+
+      <a href="/resume" class="border-2 rounded-lg w-fit p-4">
+        <h3 class="text-xl text-yellow-500 font-bold">Resume</h3>
+        <p>Notable professional works</p>
+      </a>
+    </section>
   </main>
 </SiteLayout>

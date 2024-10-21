@@ -1,13 +1,16 @@
 ---
 import SiteLayout from "../components/SiteLayout.astro";
-import { Content } from "../content/resume.mdx";
+import { getEntry } from "astro:content";
+const entry = await getEntry("about", "resume");
+
+const { Content } = await entry.render();
 ---
 
 <SiteLayout title="zeu.dev">
   <main class="flex flex-col gap-4 px-4 py-8 text-white text-lg">
     <h1 class="text-5xl text-yellow-500 font-bold">Resume</h1>
     <p class="text-yellow-500">
-      Notable works, professional and otherwise.
+      Notable professional works
     </p>
 
     <span class="prose prose-invert prose-yellow lg:prose-xl prose-headings:text-yellow-500">

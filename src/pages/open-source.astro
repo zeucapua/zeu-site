@@ -1,13 +1,16 @@
 ---
 import SiteLayout from "../components/SiteLayout.astro";
-import { Content } from "../content/open-source.mdx";
+import { getEntry } from "astro:content";
+const entry = await getEntry("about", "open-source");
+
+const { Content } = await entry.render();
 ---
 
 <SiteLayout title="zeu.dev">
   <main class="flex flex-col gap-4 px-4 py-8 text-white text-lg">
     <h1 class="text-5xl text-yellow-500 font-bold">Open Source</h1>
     <p class="text-yellow-500">
-      Explorations, packages, and other code shenanigans.
+      Explorations, packages, and sites.
     </p>
 
     <span class="prose prose-invert prose-yellow lg:prose-xl prose-headings:text-yellow-500">
