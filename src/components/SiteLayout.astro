@@ -1,4 +1,5 @@
 ---
+import NavigationDialog from "./NavigationDialog.svelte";
 import { ViewTransitions } from "astro:transitions";
 const { title } = Astro.props;
 ---
@@ -21,18 +22,17 @@ const { title } = Astro.props;
         <h2 class="hidden md:flex">all things me!</h2>
       </div>
 
-      <button id="menu_button" class="px-2 py-1 border border-yellow-500 self-end w-fit h-fit md:hidden">
-        Menu
-      </button>
+      <NavigationDialog client:load />
 
       <nav id="navigation" class="hidden md:flex flex-col gap-4 w-full md:col-span-1" transition:persist>
         <hr class="border-yellow-500 " />
 
         <section class="flex flex-col gap-2 text-white">
           <h3 class="text-yellow-500">socials</h3>
-          <a href="https://twitter.com/zeu_dev" target="_blank" class="after:content-['_↗']">twitter</a>
+          <a href="https://bsky.app/profile/zeu.dev" target="_blank" class="after:content-['_↗']">bluesky</a>
           <a href="https://github.com/zeucapua" target="_blank" class="after:content-['_↗']">github</a>
           <a href="https://twitch.tv/zeu_dev" target="_blank" class="after:content-['_↗']">twitch</a>
+          <a href="https://twitter.com/zeu_dev" target="_blank" class="after:content-['_↗']">twitter</a>
         </section>
 
         <hr class="border-yellow-500 " />
@@ -63,11 +63,6 @@ const { title } = Astro.props;
     </div>
 	</body>
 </html>
-
-<script>
-  const menuButton = document.querySelector("#menu_button");
-  const navSection = document.querySelector("#navigation");
-</script>
 
 <style is:global>
   @font-face {
