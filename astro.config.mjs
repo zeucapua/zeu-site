@@ -11,5 +11,6 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), svelte(), mdx(), icon()],
   output: "server",
+  site: "https://zeu.dev/",
   adapter: netlify(),
 });
