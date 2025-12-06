@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Dialog } from "bits-ui";
-  import { fade } from "svelte/transition";
 </script>
 
 <Dialog.Root>
@@ -8,7 +7,7 @@
     Menu 
   </Dialog.Trigger>
   <Dialog.Portal>
-    <Dialog.Overlay transition={fade} class="fixed inset-0 z-50 bg-black/80" />
+    <Dialog.Overlay class="fixed inset-0 z-50 bg-black/80" />
     <Dialog.Content
       class="bg-neutral-800 fixed left-[50%] top-[50%] z-50 w-full max-w-[94%] translate-x-[-50%] translate-y-[-50%] rounded-card-lg border bg-background p-5 shadow-popover outline-none sm:max-w-[490px] md:w-full"
     >
@@ -16,10 +15,11 @@
 
         <section class="flex flex-col gap-2 text-white">
           <h3 class="text-yellow-500">socials</h3>
-          <a href="https://bsky.app/profile/zeu.dev" target="_blank" class="after:content-['_↗']">bluesky</a>
-          <a href="https://github.com/zeucapua" target="_blank" class="after:content-['_↗']">github</a>
-          <a href="https://twitch.tv/zeu_dev" target="_blank" class="after:content-['_↗']">twitch</a>
-          <a href="https://twitter.com/zeu_dev" target="_blank" class="after:content-['_↗']">twitter</a>
+          <a href="https://bsky.app/profile/zeu.dev" target="_blank" class="after:content-['_↗'] before:content-['🦋_']">bluesky</a>
+          <a href="https://github.com/zeucapua" target="_blank" class="after:content-['_↗'] before:content-['💻_']">github</a>
+          <a href="https://tangled.sh/zeu.dev" target="_blank" class="after:content-['_↗'] before:content-['🧶_']">tangled</a>
+          <a href="https://twitch.tv/zeu_dev" target="_blank" class="after:content-['_↗'] before:content-['👾_']">twitch</a>
+          <a href="https://stream.place/zeu.dev" target="_blank" class="after:content-['_↗'] before:content-['🟪_']">streamplace</a>
         </section>
 
         <hr class="border-yellow-500 " />

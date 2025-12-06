@@ -1,8 +1,11 @@
 ---
 import SiteLayout from "../components/SiteLayout.astro";
 import { getEntry } from "astro:content";
-const entry = await getEntry("about", "resume");
 
+const entry = await getEntry("about", "resume");
+if (!entry) {
+  throw new Error("Could not find ../content/about/resume.mdx");
+}
 const { Content } = await entry.render();
 ---
 

@@ -1,0 +1,25 @@
+---
+import { render } from "astro:content";
+import SiteLayout from "../components/SiteLayout.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("about", "as-seen-on");
+if (!entry) {
+  throw new Error("Could not find ../content/about/as-seen-on.mdx");
+}
+const { Content } = await render(entry);
+---
+
+<SiteLayout title="zeu.dev">
+  <main class="flex flex-col gap-4 px-4 py-8 text-white text-lg">
+    <h1 class="text-5xl text-yellow-500 font-bold">As seen on</h1>
+    <p class="text-yellow-500">
+      I've participated in a few community events and video. I stream on [stream.place](https://stream.place/zeu.dev) 
+      and [Twitch](https://twitch.tv/zeu_dev), and post videos sometimes on my [youtube channel](https://www.youtube.com/@zeucapua851).
+    </p>
+
+    <span class="prose prose-invert prose-yellow lg:prose-xl prose-headings:text-yellow-500">
+      <Content />
+    </span>
+  </main>
+</SiteLayout>

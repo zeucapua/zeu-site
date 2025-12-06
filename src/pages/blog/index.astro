@@ -11,7 +11,7 @@ const blogs = await getCollection("blog", (blog: CollectionEntry<"blog">) => {
 
 <SiteLayout title="Blogs | zeu.dev">
   <main class="flex flex-col gap-8 py-8 max-w-3xl">
-    <h1 class="text-5xl text-white font-bold">Blog Posts</h1>
+    <h1 class="text-5xl text-yellow-500 font-bold">Blog Posts</h1>
 
     { // @ts-ignore
     blogs.map((blog: any) => <BlogCard {blog} />) 
