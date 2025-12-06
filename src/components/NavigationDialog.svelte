@@ -12,6 +12,27 @@
       class="bg-neutral-800 fixed left-[50%] top-[50%] z-50 w-full max-w-[94%] translate-x-[-50%] translate-y-[-50%] rounded-card-lg border bg-background p-5 shadow-popover outline-none sm:max-w-[490px] md:w-full"
     >
       <nav id="navigation" class="flex flex-col gap-4 w-full md:col-span-1"> 
+        <section class="flex flex-col gap-2 text-white">
+          <h3 class="text-yellow-500">
+            <a href="/blog" class="after:content-['_->'] before:content-['📑_']">blog</a>
+          </h3>
+        </section>
+
+        <hr class="border-yellow-500 " />
+
+        <section class="flex flex-col gap-2 text-white">
+          <h3 class="text-yellow-500">
+            <a href="/resume" class="after:content-['_->'] before:content-['💼_']">resume</a>
+          </h3>
+          <h3 class="text-yellow-500">
+            <a href="/open-source" class="after:content-['_->'] before:content-['🧮_']">open source</a>
+          </h3>
+          <h3 class="text-yellow-500">
+            <a href="/as-seen-on" class="after:content-['_->'] before:content-['🎥_']">as seen on</a>
+          </h3>
+        </section>
+
+        <hr class="border-yellow-500 " />
 
         <section class="flex flex-col gap-2 text-white">
           <h3 class="text-yellow-500">socials</h3>
@@ -20,27 +41,6 @@
           <a href="https://tangled.sh/zeu.dev" target="_blank" class="after:content-['_↗'] before:content-['🧶_']">tangled</a>
           <a href="https://twitch.tv/zeu_dev" target="_blank" class="after:content-['_↗'] before:content-['👾_']">twitch</a>
           <a href="https://stream.place/zeu.dev" target="_blank" class="after:content-['_↗'] before:content-['🟪_']">streamplace</a>
-        </section>
-
-        <hr class="border-yellow-500 " />
-
-        <section class="flex flex-col gap-2 text-white">
-          <h3 class="text-yellow-500">
-            <a href="/blog" class="after:content-['_->']">blog</a>
-          </h3>
-        </section>
-
-        <hr class="border-yellow-500 " />
-
-        <section class="flex flex-col gap-2 text-white">
-         <h3 class="text-yellow-500">
-            <a href="/resume" class="after:content-['_->']">resume</a>
-          </h3>
-          <h3 class="text-yellow-500">
-            <a href="/open-source" class="after:content-['_->']">open source</a>
-          </h3>
-          <a href="https://app.opensauced.pizza" target="_blank" class="after:content-['_↗']">OpenSauced</a>
-          <a href="https://easytodo.link" target="_blank" class="after:content-['_↗']">easytodo.link</a>
         </section>
       </nav>
       <Dialog.Close

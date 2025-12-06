@@ -21,7 +21,7 @@ const { blog }  = Astro.props;
 const { Content } = await blog.render();
 ---
 
-<SiteLayout>
+<SiteLayout title={blog.data.title}>
   <main class="flex flex-col gap-4 w-full py-8 px-4">
     <article class="prose prose-invert w-full max-w-6xl prose-code:text-purple-400"> 
       <h1 class="text-yellow-500">{blog.data.title}</h1>
