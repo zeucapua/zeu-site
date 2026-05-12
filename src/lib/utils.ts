@@ -76,5 +76,7 @@ export async function resolveHandle(handle: string) {
   const response = await fetch(url);
   const miniDoc = await response.json() as MiniDoc;
 
+  handleCache = {...handleCache, [miniDoc.handle]: miniDoc};
+
   return miniDoc;
 }

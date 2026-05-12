@@ -19,7 +19,7 @@ export default defineConfig({
       "applicationName": "Zeu's Personal Site",
       "applicationDomain": "https://zeu.dev",
       scopes: [
-        "repo:place.stream.chat.message?action=create"
+        "include:place.stream.authFull",
       ]
     })
   ],

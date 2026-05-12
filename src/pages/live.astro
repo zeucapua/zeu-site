@@ -1,0 +1,46 @@
+---
+import { actions } from "astro:actions";
+import SiteLayout from "../components/SiteLayout.astro"
+import StreamplaceChat from "../components/StreamplaceChat.svelte";
+
+export const prerender = false;
+const loggedInUser = Astro.locals.loggedInUser;
+const result = Astro.getActionResult(actions.sendChatMessage);
+console.log({ result });
+---
+
+<SiteLayout title="Stream | zeu.dev">
+  <main class="flex flex-col gap-8 px-4 py-8 text-white text-lg">
+    <h1 class="text-3xl font-bold text-yellow-500">Livestream</h1>
+    <iframe
+      src="https://stream.place/embed/zeu.dev"
+      width="560"
+      height="315"
+      allowfullscreen
+      class="border border-yellow-500 p-2"
+    ></iframe>
+
+    <form id="msgForm">
+      {!loggedInUser && <p class="text-red-400">Login to chat</p>}
+      <div class="">
+        <input id="msgInput" name="message" type="text" class="border border-yellow-500" disabled={!loggedInUser} />
+        <button type="submit" disabled={!loggedInUser}>Send</button>
+      </div>
+    </form>
+    <StreamplaceChat client:load />
+  </main>
+</SiteLayout>
+
+<script>
+  import { actions } from "astro:actions";
+  const msgInput = document.getElementById("msgInput") as HTMLInputElement;
+  const form = document.getElementById("msgForm") as HTMLFormElement;
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const result = await actions.sendChatMessage(formData);
+    if (!result.error) {
+      msgInput.value = "";
+    }
+  });
+</script>
