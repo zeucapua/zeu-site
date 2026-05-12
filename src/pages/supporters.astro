@@ -1,0 +1,21 @@
+---
+import SiteLayout from "../components/SiteLayout.astro";
+import { getSupporters } from "../lib/atf";
+
+const { list: supporters } = await getSupporters("did:plc:gotnvwkr56ibs33l4hwgfoet");
+---
+
+<SiteLayout title="Supporters | zeu.dev">
+  <main class="flex flex-col gap-8 px-4 py-8 text-white text-lg">
+    <h1 class="text-5xl font-bold text-yellow-500">Supporters</h1>
+    <p>A non exhaustive list of donators and financial supporters in past and present</p>
+    <section class="flex flex-col gap-8 my-8">
+      { supporters.map((profile) => (
+        <div class="flex gap-8">
+          <img src={profile.avatar} class="size-12"/>
+          {profile.displayName ?? profile.handle}
+        </div>
+      ))}
+    </section>
+  </main>
+</SiteLayout>

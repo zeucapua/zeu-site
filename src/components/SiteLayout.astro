@@ -1,6 +1,9 @@
 ---
+import { Login } from "@fujocoded/authproto/components";
 import NavigationDialog from "./NavigationDialog.svelte";
+
 const { title } = Astro.props;
+const loggedInUser = Astro.locals.loggedInUser;
 ---
 
 <html lang="en">
@@ -48,6 +51,9 @@ const { title } = Astro.props;
 
         <section class="flex flex-col gap-2 text-white">
           <h3 class="text-yellow-500">
+            <a href="/stream" class="after:content-['_->'] before:content-['🔴_']">stream</a>
+          </h3>
+          <h3 class="text-yellow-500">
             <a href="/resume" class="after:content-['_->'] before:content-['💼_']">resume</a>
           </h3>
           <h3 class="text-yellow-500">
@@ -55,6 +61,12 @@ const { title } = Astro.props;
           </h3>
           <h3 class="text-yellow-500">
             <a href="/as-seen-on" class="after:content-['_->'] before:content-['🎥_']">as seen on</a>
+          </h3>
+          <h3 class="text-yellow-500">
+            <a href="/friends" class="after:content-['_->'] before:content-['🧑‍🤝‍🧑_']">friends</a>
+          </h3>
+          <h3 class="text-yellow-500">
+            <a href="/supporters" class="after:content-['_->'] before:content-['🤩_']">supporters</a>
           </h3>
         </section>
 
@@ -69,6 +81,12 @@ const { title } = Astro.props;
           <a href="https://stream.place/zeu.dev" target="_blank" class="after:content-['_↗'] before:content-['🟪_']">streamplace</a>
         </section>
 
+        <hr class="border-yellow-500 " />
+
+        <section class="flex flex-col gap-2 text-white">
+          {loggedInUser && <p>{loggedInUser.handle}</p>}
+          <Login />
+        </section>
       </nav>
     </aside>
 

@@ -1,0 +1,21 @@
+---
+import SiteLayout from "../components/SiteLayout.astro";
+import { getConnections } from "../lib/youandme";
+const { list: connections } = await getConnections("did:plc:gotnvwkr56ibs33l4hwgfoet");
+---
+
+<SiteLayout title="Friends | zeu.dev">
+  <main class="flex flex-col gap-8 px-4 py-8 text-white text-lg">
+    <h1 class="text-5xl font-bold text-yellow-500">Friends</h1>
+    <p>Using <a href="youandme.at" class="text-yellow-500 underline">You and Me</a>, here are all the friends I've made in the Atmosphere in person!</p>
+    <div class="flex flex-wrap gap-8">
+      {connections.map((profile) => (
+        <div class="flex gap-8">
+          <img src={profile.avatar.ref.$link} class="size-12"/>
+          {profile.displayName ?? profile.handle}
+        </div>
+      ))}
+    </div>
+  </main>
+</SiteLayout>
+
