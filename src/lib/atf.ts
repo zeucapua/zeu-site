@@ -15,9 +15,10 @@ type GetSupportersResult = {
   list: MiniDoc[];
 }
 
+let supportersCache: Record<string, MiniDoc> = {};
+
 export async function getSupporters(did: string): Promise<GetSupportersResult> {
   const { total, linking_dids } = await getDistinctDids(did, "com.atprotofans.supporter", ".subject");
-  console.log(linking_dids);
 
   const list = [];
   for (const did of linking_dids) {
@@ -25,6 +26,7 @@ export async function getSupporters(did: string): Promise<GetSupportersResult> {
     const profile = await getATFProfile(did);
     miniDoc.avatar = `${miniDoc.pds}/xrpc/com.atproto.sync.getBlob?did=${miniDoc.did}&cid=${profile.avatar.ref.$link}`;
     miniDoc.displayName = profile.displayName;
+    supportersCache = {...supportersCache, [did]: miniDoc};
     list.push(miniDoc);
   }
 
