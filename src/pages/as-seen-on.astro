@@ -3,6 +3,8 @@ import { render } from "astro:content";
 import SiteLayout from "../components/SiteLayout.astro";
 import { getEntry } from "astro:content";
 
+export const prerender = true;
+
 const entry = await getEntry("about", "as-seen-on");
 if (!entry) {
   throw new Error("Could not find ../content/about/as-seen-on.mdx");
