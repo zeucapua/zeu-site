@@ -1,5 +1,8 @@
 ---
 import SiteLayout from "../components/SiteLayout.astro";
+import { getSupporters } from "../lib/atf";
+
+const { list: supporters } = await getSupporters("did:plc:gotnvwkr56ibs33l4hwgfoet");
 ---
 
 <SiteLayout title="zeu.dev">
@@ -35,6 +38,18 @@ import SiteLayout from "../components/SiteLayout.astro";
         <h3 class="text-xl text-yellow-500 font-bold">Resume</h3>
         <p>Career and professional work</p>
       </a>
+    </section>
+
+    <section class="flex flex-col gap-8 my-8">
+      <h2 class="text-yellow-500 text-xl font-bold">
+        Thank you to my Supporters
+      </h2>
+      { supporters.map((profile) => (
+        <div class="flex gap-8">
+          <img src={profile.avatar} class="size-12"/>
+          {profile.displayName ?? profile.handle}
+        </div>
+      ))}
     </section>
   </main>
 </SiteLayout>
