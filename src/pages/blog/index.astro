@@ -4,6 +4,8 @@ import BlogCard from "../../components/BlogCard.astro";
 import SiteLayout from "../../components/SiteLayout.astro";
 import type { CollectionEntry } from "astro:content";
 
+export const prerender = true;
+
 const blogs = await getCollection("blog", (blog: CollectionEntry<"blog">) => {
   return blog.data.draft === false;
 });

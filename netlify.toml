@@ -1,0 +1,5 @@
+[build]
+  publish = "dist"
+
+[build.environment]
+  ASTRO_DATABASE_FILE = "file:.astro/content.db"

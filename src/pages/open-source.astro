@@ -1,6 +1,6 @@
 ---
 import SiteLayout from "../components/SiteLayout.astro";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 export const prerender = true;
 
@@ -8,7 +8,7 @@ const entry = await getEntry("about", "open-source");
 if (!entry) {
   throw new Error("Could not find ../content/about/open-source.mdx");
 }
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <SiteLayout title="Open Source | zeu.dev">

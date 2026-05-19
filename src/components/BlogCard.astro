@@ -8,7 +8,7 @@ export interface Props {
 const { blog } = Astro.props;
 ---
 
-<a href={`/blog/${blog.slug}`}>
+<a href={`/blog/${blog.id}`}>
   <article 
     class="flex flex-row justify-between items-center w-full h-fit px-8 py-4 border-2 text-white rounded-md">
     <div class="flex flex-col gap-2 !!no-underline ">

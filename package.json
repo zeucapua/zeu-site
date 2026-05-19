@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "ASTRO_DATABASE_FILE=file:.astro/content.db astro check && ASTRO_DATABASE_FILE=file:.astro/content.db astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "0.9.6",
+    "@astrojs/db": "^0.21.2",
     "@astrojs/mdx": "4.3.12",
     "@astrojs/netlify": "6.6.3",
     "@astrojs/svelte": "7.2.2",

@@ -8,21 +8,18 @@ import netlify from "@astrojs/netlify";
 import og from "astro-og";
 import authproto from "@fujocoded/authproto";
 
+import db from "@astrojs/db";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    svelte(),
-    mdx(),
-    icon(), 
-    og(),
-    authproto({
-      "applicationName": "Zeu's Personal Site",
-      "applicationDomain": "https://zeu.dev",
-      scopes: [
-        "include:place.stream.authFull",
-      ]
-    })
-  ],
+  integrations: [svelte(), mdx(), icon(), og(), db(), authproto({
+    "applicationName": "Zeu's Personal Site",
+    "applicationDomain": "https://zeu.dev",
+    "driver": { name: "astro:db" },
+    scopes: [
+      "include:place.stream.authFull",
+    ]
+  })],
   server: { host: true },
   output: "server",
   adapter: netlify(),
