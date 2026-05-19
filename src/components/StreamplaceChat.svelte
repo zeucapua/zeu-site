@@ -37,11 +37,6 @@
     }
   };
 
-  $effect(() => {
-    // @ts-ignore
-    chat = chat.toSorted((a, b) => new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime());
-  });
-
   onDestroy(() => {
     websocket.close();
   });
