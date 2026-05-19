@@ -10,23 +10,23 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.6",
+    "@astrojs/check": "0.9.9",
     "@astrojs/db": "^0.21.2",
-    "@astrojs/mdx": "4.3.12",
-    "@astrojs/netlify": "6.6.3",
-    "@astrojs/svelte": "7.2.2",
-    "@atproto/common-web": "^0.4.21",
+    "@astrojs/mdx": "5.0.6",
+    "@astrojs/netlify": "7.0.10",
+    "@astrojs/svelte": "8.1.1",
+    "@atproto/common-web": "^0.5.0",
     "@fujocoded/authproto": "^0.3.1",
-    "@iconify-json/tabler": "^1.2.23",
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
-    "@tailwindcss/vite": "^4.1.17",
-    "astro": "5.16.4",
+    "@iconify-json/tabler": "^1.2.35",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "6.3.5",
     "astro-icon": "^1.1.5",
-    "astro-og": "^0.3.1",
-    "bits-ui": "^2.14.4",
-    "svelte": "^5.45.5",
-    "tailwindcss": "^4.1.17",
-    "typescript": "^5.9.3"
+    "astro-og": "^0.3.2",
+    "bits-ui": "^2.18.1",
+    "svelte": "^5.55.8",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19"
